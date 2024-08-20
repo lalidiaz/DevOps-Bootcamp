@@ -11,9 +11,11 @@ For more details about the bootcamp, visit [RoxsRoss's DevOps Bootcamp website](
 ### Repository Overview
 This repository will contain my solutions to the following:
 
-*Challenges*: Step-by-step solutions to practical DevOps challenges.
-*Exercises*: My approach to the exercises provided during the bootcamp.
-*Notes*: Key takeaways, notes, and resources I've gathered along the way.
+**Challenges**: Step-by-step solutions to practical DevOps challenges.
+
+**Exercises**: My approach to the exercises provided during the bootcamp.
+
+**Notes**: Key takeaways, notes, and resources I've gathered along the way.
 
 ### How to Use This Repository
 Feel free to explore the directories and files in this repository. Each folder is named according to the specific module or topic covered in the bootcamp. Inside, you'll find markdown files, scripts, configurations, and other relevant resources.
