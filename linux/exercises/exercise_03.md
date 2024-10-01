@@ -2,7 +2,7 @@
 
 ## Installation of the LAMP Stack (Linux, Apache, MySQL, PHP) in Ubuntu
 
-### 1. Apache Installation**
+### 1. Apache Installation
 Update
 
 ```
