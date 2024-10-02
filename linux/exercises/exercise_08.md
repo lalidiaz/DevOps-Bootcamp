@@ -8,7 +8,7 @@ In this guide, I will discuss how to install Nginx on my Ubuntu server, adjust t
 I will deploy my applications from GitHub using DigitalOcean App Platform. I will let DigitalOcean handle scaling my application.
 
 ### Prerequisites
-Before I begin this guide, I need to have a regular user (not root) with sudo privileges set up on my server. I can learn how to set up a regular user account by following the [initial server setup guide for Ubuntu 22.04](https://guias.donweb.com/configuracion-inicial-de-un-servidor-con-ubuntu-22-04/.
+Before I begin this guide, I need to have a regular user (not root) with sudo privileges set up on my server. I can learn how to set up a regular user account by following the initial server setup guide for Ubuntu 22.04.
 
 It is also optional for me to register a domain name before completing the final steps of this tutorial. To learn more about how to set up a domain name with DigitalOcean, I will check our Introduction to DigitalOcean DNS.
 
