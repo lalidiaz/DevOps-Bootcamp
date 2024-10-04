@@ -209,9 +209,9 @@ Verify that the application works correctly by accessing it from a web browser t
 <img width="1183" alt="Screenshot 2024-10-03 at 11 18 21 PM" src="https://github.com/user-attachments/assets/3bbc56d0-083c-4a3d-b04a-8bf4a61f6b65">
 
 
-Optimize the Nginx and Gunicorn configuration for better performance:
+### Optimize the Nginx and Gunicorn configuration for better performance:
 
-_Gunicorn Performance Optimizations_
+#### _Gunicorn Performance Optimizations_
 After doing some research, there are a few key settings when setting up Gunicorn I can tweak to get better performance based on the app's needs. 
 I am able to adjust how the server behaves using command-line options. 
 
@@ -238,15 +238,15 @@ Also, using asynchronous workers like gevent can vastly improve performance for 
 gunicorn --workers 4 --worker-class gevent library_site:app
 ```
 
-Workers and Workers Class: The number of worker processes for handling requests should generally be in the range of 2-4 x $(num_cores) where $(num_cores) is the number of CPU cores on your server. Also, using asynchronous workers like gevent can vastly improve performance for I/O-bound applications.
+**Workers and Workers Class:** The number of worker processes for handling requests should generally be in the range of 2-4 x $(num_cores) where $(num_cores) is the number of CPU cores on your server. Also, using asynchronous workers like gevent can vastly improve performance for I/O-bound applications.
 
-Timeouts and Keep-Alive: It's important to adjust the timeout settings according to your application's characteristics. Longer timeouts might be necessary for long-running requests. Also, consider setting the keep-alive directive to a reasonable value to reduce the load on establishing TCP connections.
+**Timeouts and Keep-Alive:** It's important to adjust the timeout settings according to your application's characteristics. Longer timeouts might be necessary for long-running requests. Also, consider setting the keep-alive directive to a reasonable value to reduce the load on establishing TCP connections.
 ```
 gunicorn --timeout 120 --keep-alive 5 library_site:app
 ```
 
 
-_NGINX Performance Optimizations_
+#### _NGINX Performance Optimizations_
 
 Chaching: Set up caching for static files to decrease latency and reduce load on your Flask application.
 ```
