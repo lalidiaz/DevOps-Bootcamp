@@ -1,6 +1,6 @@
 # Redirection and Pipes Exercises
 
-### Exercise 1: Output and Input Redirection
+### Exercise 1: Output and Input Redirection
 
 #### 1.1 Redirect the output of the ls command to the file content.txt.
 
@@ -20,7 +20,7 @@ ps >> content.txt
 sort < content.txt > ordered.txt
 ```
 
-### Exercise 2: Error Redirection
+### Exercise 2: Error Redirection
 
 #### 2.1 Redirect the errors from the ls command to a file called errors.txt.
 
@@ -35,7 +35,7 @@ ls other_file 2>> errors.txt
 
 ```
 
-### Exercise 3: Using Pipes
+### Exercise 3: Using Pipes
 
 #### 3.1 Use a pipe to count the number of lines in the file ordered.txt.
 

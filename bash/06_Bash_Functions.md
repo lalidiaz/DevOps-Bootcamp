@@ -1,8 +1,8 @@
 # Bash Functions Exercises
 
-## Exercise 1: Function Definition
+## Exercise 1: Function Definition
 
-### 1.1 Write a function that prints "Hello, World!" and call it from a script.
+### 1.1 Write a function that prints "Hello, World!" and call it from a script.
 
 ```
 say_hi() {
@@ -12,7 +12,7 @@ say_hi() {
 say_hi
 ```
 
-### 1.2 Write a function that accepts a name as a parameter and prints "Hi, [name]". Call it with different names.
+### 1.2 Write a function that accepts a name as a parameter and prints "Hi, [name]". Call it with different names.
 
 ```
 greeting() {
@@ -25,7 +25,7 @@ greeting "Molly"
 
 ## Exercise 2: Function Parameters
 
-### 2.1 Write a function that accepts two numbers as parameters and returns their sum.
+### 2.1 Write a function that accepts two numbers as parameters and returns their sum.
 
 ```
 sum() {
@@ -35,7 +35,7 @@ sum() {
 sum 3 4
 ```
 
-### 2.2 Write a function that accepts two numbers as parameters, stores their sum in a global variable, and prints the result.
+### 2.2 Write a function that accepts two numbers as parameters, stores their sum in a global variable, and prints the result.
 
 ```
 sum() {
@@ -46,9 +46,9 @@ sum() {
 sum 3 4
 ```
 
-## Exercise 3: Returning Values
+## Exercise 3: Returning Values
 
-### 3.1 Write a function that accepts two numbers as parameters and returns the larger of the two.
+### 3.1 Write a function that accepts two numbers as parameters and returns the larger of the two.
 
 ```
 larger() {
@@ -62,7 +62,7 @@ larger() {
 larger 10 20
 ```
 
-### 3.2 Write a function that calculates the square of a number and returns the result.
+### 3.2 Write a function that calculates the square of a number and returns the result.
 
 ```
 square() {
@@ -75,7 +75,7 @@ echo "The square of 5 is $result"
 
 ## Exercise 4: Variable Scope
 
-### 4.1 Write a function that defines a local variable and a global variable. Call the function and demonstrate the difference in scope.
+### 4.1 Write a function that defines a local variable and a global variable. Call the function and demonstrate the difference in scope.
 
 ```
 example() {
@@ -90,7 +90,7 @@ echo $var_local   # Prints nothing, as var_local is local to the function
 
 ## Exercise 5: Recursive Functions
 
-### 5.1 Write a recursive function to calculate the factorial of a number.
+### 5.1 Write a recursive function to calculate the factorial of a number.
 
 ```
 factorial() {
