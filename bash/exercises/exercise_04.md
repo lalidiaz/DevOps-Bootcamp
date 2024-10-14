@@ -1,12 +1,14 @@
 # Exercise 4: Real-Time Log Monitoring
 
-## Case Description
+## Case Description
+
 You want to monitor system logs in real-time and receive a notification when the word "ERROR" is detected.
 
-## Exercise
+## Exercise
+
 4.1 Create a Bash script that monitors system logs in real-time and sends an email notification when the word "ERROR" is detected.
 
-## My Solution ✅
+## My Solution ✅
 
 ```
 #!/bin/bash

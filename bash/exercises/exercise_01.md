@@ -14,7 +14,7 @@ Your company has a web application based on the LAMP stack (Linux, Apache, MySQL
 
 #### 1.1 Create a Bash script that automates the web application deployment process described above.
 
-## My Solution ✅
+## My Solution ✅
 
 ```
 #!/bin/bash

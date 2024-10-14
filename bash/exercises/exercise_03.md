@@ -4,10 +4,11 @@
 
 Temporary files and old logs can fill up the disk over time. You need to automate the cleanup of these files.
 
-## Exercise
+## Exercise
+
 ### 3.1 Create a Bash script that cleans up temporary files and logs older than 10 days.
 
-## My Solution ✅
+## My Solution ✅
 
 ```
 #!/bin/bash

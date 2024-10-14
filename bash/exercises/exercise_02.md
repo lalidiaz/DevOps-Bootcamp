@@ -1,12 +1,14 @@
-# Exercise 2: Database Backup and Cleanup
+# Exercise 2: Database Backup and Cleanup
 
-## Case Description
+## Case Description
+
 You need to perform regular backups of a MySQL database and clean up old backups to save disk space.
 
-## Exercise
-### 2.1 Create a Bash script that performs a backup of a MySQL database, compresses it, and deletes backups older than 30 days.
+## Exercise
 
-## My Solution ✅
+### 2.1 Create a Bash script that performs a backup of a MySQL database, compresses it, and deletes backups older than 30 days.
+
+## My Solution ✅
 
 ```
 #!/bin/bash
