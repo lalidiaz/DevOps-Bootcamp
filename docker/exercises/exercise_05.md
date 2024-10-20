@@ -39,11 +39,6 @@ To connect to your PostgreSQL container, create a new server in pgAdmin by follo
 
 Next, click **Save** to establish the connection.
 
-Here are some screenshots to help guide you through this configuration:
-![alt text](image.png)
-![alt text](image-1.png)
-![alt text](image-2.png)
-
 ## Step 4: Explore and Manage the Database
 
 Once connected to the PostgreSQL server, you can start exploring and managing the database through pgAdmin's interface. If you want to create tables and manage data, I recommend following this additional guide:
