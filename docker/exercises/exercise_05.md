@@ -65,3 +65,27 @@ This command:
 - Deletes the images downloaded from the Docker registry.
 
 This process ensures that your environment is clean after the session.
+
+## My Solution ✅
+
+My `docker-compose.yaml` file it's located in /docker/exercises directory.
+
+Steps I followed to solve this exercise:
+
+1. Get the official image for pgadmin from the docs: https://hub.docker.com/r/dpage/pgadmin4/
+2. Check env. variables for the container from docs: https://www.pgadmin.org/docs/pgadmin4/latest/container_deployment.html#environment-variables
+
+<!-- In case I want to add volumes: 
+Read about PGDATA for volumes in docs https://hub.docker.com/_/postgres:
+
+#### PGDATA
+`Important Note: when mounting a volume to /var/lib/postgresql, the /var/lib/postgresql/data path is a local volume from the container runtime, thus data is not persisted on the mounted volume.` -->
+
+3. Create the `docker-compose.yaml` file
+
+4. Perform STEP 1:
+
+```
+docker-compose up -d --build
+```
+
