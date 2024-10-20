@@ -63,7 +63,7 @@ This process ensures that your environment is clean after the session.
 
 ## My Solution ✅
 
-My `docker-compose.yaml` file it's located in /docker/exercises directory.
+My `docker-compose.yaml` (will be named exercise_05_docker-compose.yaml) file it's located in /docker/exercises directory.
 
 Steps I followed to solve this exercise:
 

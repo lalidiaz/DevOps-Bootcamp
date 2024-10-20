@@ -264,3 +264,16 @@ $ docker run -d --name wordpress-db \
 ```
 
 Other restart values include: no (default), always, and on-failure.
+
+
+## My Solution ✅
+
+After creating the docker-compose.yaml file (will be named exercise_06_docker-compose.yaml), 
+Execute the app 
+
+```
+docker compose up -d
+```
+
+
+When we start the application, Compose shows us the services it has started:
