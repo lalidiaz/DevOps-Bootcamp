@@ -265,7 +265,6 @@ $ docker run -d --name wordpress-db \
 
 Other restart values include: no (default), always, and on-failure.
 
-
 ## My Solution ✅
 
 After creating the docker-compose.yaml file (will be named exercise_06_docker-compose.yaml), 
@@ -277,3 +276,39 @@ docker compose up -d
 
 
 When we start the application, Compose shows us the services it has started:
+
+<img width="813" alt="Screenshot 2024-10-20 at 8 47 09 PM" src="https://github.com/user-attachments/assets/0ad11b9f-485c-4ddb-8f91-fd22d85dce65">
+
+<img width="680" alt="Screenshot 2024-10-20 at 9 05 54 PM" src="https://github.com/user-attachments/assets/72e0bc2e-d9e7-4c3f-ae6e-df206ca6d19c">
+
+
+```
+docker compose ps
+```
+
+<img width="1323" alt="Screenshot 2024-10-20 at 9 06 14 PM" src="https://github.com/user-attachments/assets/d0116e0f-0483-4845-a9a1-d3bb90725c16">
+
+
+
+If we go to http://localhost:8080/, we will see the WordPress installation again.
+
+<img width="1905" alt="Screenshot 2024-10-20 at 9 08 18 PM" src="https://github.com/user-attachments/assets/f97dc0ba-9422-489b-96ec-9a32b35fd64e">
+
+
+#### Stop the services
+
+```
+docker compose stop
+```
+
+<img width="1556" alt="Screenshot 2024-10-20 at 9 09 19 PM" src="https://github.com/user-attachments/assets/35315a5b-b8d4-49e4-a0bd-a9aface53d58">
+
+
+#### Delete services
+
+```
+docker compose down
+```
+<img width="1156" alt="Screenshot 2024-10-20 at 9 10 37 PM" src="https://github.com/user-attachments/assets/0795f190-a47b-4f67-9344-3706dea9456d">
+
+
