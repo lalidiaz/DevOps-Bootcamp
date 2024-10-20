@@ -15,7 +15,7 @@ services:
     depends_on:
       - db
     volumes:
-      - ./target:/var/www/html
+      - ~/DevOps-Bootcamp/docker/exercises/target:/var/www/html
     environment:
       - WORDPRESS_DB_USER=manager
       - WORDPRESS_DB_PASSWORD=secret
