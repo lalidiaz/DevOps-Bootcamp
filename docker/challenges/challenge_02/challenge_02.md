@@ -29,3 +29,38 @@ In this challenge, you will create a Docker container running Nginx that serves 
 5. Acces Web Site
 
 - Open your browser and go to `http://localhost:9999` to view the content served by Nginx from your container.
+
+## My Solution ✅
+
+
+My Dockerfile
+
+```
+FROM nginx:alpine
+COPY ./devops-static-web/bootcamp-web /usr/share/nginx/html
+EXPOSE 9999
+CMD ["nginx", "-g", "daemon off;"]
+```
+
+Build Image
+
+```
+docker build . --tag simple-nginx:v1
+```
+
+Verify image
+
+```
+docker images
+```
+
+Create container from new image
+
+```
+docker run -d --name my_nginx -p 9999:80 simple-nginx:v1
+docker ps
+```
+
+
+
+<img width="1914" alt="Screenshot 2024-10-21 at 11 20 48 PM" src="https://github.com/user-attachments/assets/a0a59684-e8b9-44f3-95dd-80f9de53da3a">
