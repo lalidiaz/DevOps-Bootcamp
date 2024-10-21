@@ -267,7 +267,7 @@ Other restart values include: no (default), always, and on-failure.
 
 ## My Solution ✅
 
-After creating the docker-compose.yaml file (will be named exercise_06_docker-compose.yaml), 
+After creating the docker-compose.yaml file 
 Execute the app 
 
 ```

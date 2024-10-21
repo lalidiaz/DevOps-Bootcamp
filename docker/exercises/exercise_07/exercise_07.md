@@ -177,3 +177,13 @@ ctl + c
 ```
 
 Using Docker to learn a programming language offers an endless opportunity to keep learning.
+
+
+
+## My Solution ✅
+
+Create and start a container
+
+```
+docker compose up -d
+```
