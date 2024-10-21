@@ -1,4 +1,4 @@
-<img width="1137" alt="Screenshot 2024-10-20 at 7 27 04 PM" src="https://github.com/user-attachments/assets/d97e336d-c654-41bf-bda2-d5f37ac9c674"># Example: MySQL and PHPMyAdmin with Docker
+# Example: MySQL and PHPMyAdmin with Docker
 
 This example shows how to run MySQL and PHPMyAdmin containers connected to each other, allowing you to easily manage a MySQL database through a graphical interface.
 
@@ -43,7 +43,7 @@ Enter the password you specified earlier (secret-pw).
 
 4. Exit the Container:
 
-To exit the interactive MySQL terminal, type exit. Then, to leave the container without stopping it, press ```Ctrl+P``` and ```Ctrl+Q```. This will return you to your local terminal without stopping the container.
+To exit the interactive MySQL terminal, type exit. Then, to leave the container without stopping it, press `Ctrl+P` and `Ctrl+Q`. This will return you to your local terminal without stopping the container.
 
 5. Start the PHPMyAdmin Container:
 
@@ -78,16 +78,13 @@ docker rm db my-admin
 - Ensure that the ports you’re using (3306 for MySQL and 82 for PHPMyAdmin) are not in use by other services on your machine.
 - PHPMyAdmin is a useful tool for managing MySQL databases without needing to use the command line, especially in development environments.
 
-
 ## My Solution ✅
-
 
 1. Start the MySQL Container
 
 ```
 docker run --name=db -p 3306:3306 -e MYSQL_ROOT_PASSWORD=secret-pw -d mysql:8.1
 ```
-
 
 2. View MySQL Container Logs:
 
@@ -97,9 +94,8 @@ docker logs db
 
 <img width="952" alt="Screenshot 2024-10-20 at 7 25 23 PM" src="https://github.com/user-attachments/assets/df8947b0-dc93-4c80-864a-3e1d3b221617">
 
-
 3. Connect to the MySQL Container:
- 
+
 ```
 docker exec -it db bash
 mysql -u root -p
@@ -113,9 +109,8 @@ docker run -d --name=my-admin -p 82:80 --link db:db phpmyadmin:5.2.1
 
 6. Access PHPMyAdmin:
 
-Access ```http://localhost:82/```
+Access `http://localhost:82/`
 <img width="1465" alt="Screenshot 2024-10-20 at 7 27 36 PM" src="https://github.com/user-attachments/assets/6ecf3092-863b-41d8-aa24-91526a24347a">
-
 
 7. Stop and Remove the Containers:
 
