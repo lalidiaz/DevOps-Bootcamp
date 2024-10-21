@@ -1,5 +1,4 @@
 # This example shows how to set up a Laravel application using docker-compose, with an Nginx web server, a MySQL database, and a custom network for the services.
-
 version: "3.9"
 
 services:
