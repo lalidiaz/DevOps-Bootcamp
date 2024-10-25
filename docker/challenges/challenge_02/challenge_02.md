@@ -1,9 +1,10 @@
-# Challenge: Create an Nginx Container
+# Challenge: Create an Nginx Container
 
-## Objective
+## Objective
+
 In this challenge, you will create a Docker container running Nginx that serves web content from a specific folder. The container will be accessible at `http://localhost:9999`.
 
-## Instructions
+## Instructions
 
 1. Create the Nginx container:
 
@@ -32,7 +33,6 @@ In this challenge, you will create a Docker container running Nginx that serves 
 
 ## My Solution ✅
 
-
 My Dockerfile
 
 ```
@@ -60,7 +60,5 @@ Create container from new image
 docker run -d --name my_nginx -p 9999:80 simple-nginx:v1
 docker ps
 ```
-
-
 
 <img width="1914" alt="Screenshot 2024-10-21 at 11 20 48 PM" src="https://github.com/user-attachments/assets/a0a59684-e8b9-44f3-95dd-80f9de53da3a">
