@@ -1,9 +1,10 @@
 # Challenge: Deploy MongoDB and Mongo Express Containers
 
-## Objective
+## Objective
+
 In this challenge, you will create a Docker environment that includes two containers: one for MongoDB and another for Mongo Express. MongoDB will be secured with a username and password, while Mongo Express will allow you to manage the database through a web interface.
 
-## Instructions
+## Instructions
 
 1. Create the MongoDB container:
 
@@ -33,5 +34,8 @@ On your machine, place the books.json file with the following content:
 
 - Use the Mongo Express interface to import the data from books.json into the Books collection in the Library database.
 
-## Notes
+## Notes
+
 In this challenge, we use Mongo Express instead of Mongo Compass to simplify the setup and allow the solution to be completely container-based.
+
+## My Solution ✅
