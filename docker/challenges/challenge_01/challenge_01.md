@@ -39,3 +39,8 @@ On your machine, place the books.json file with the following content:
 In this challenge, we use Mongo Express instead of Mongo Compass to simplify the setup and allow the solution to be completely container-based.
 
 ## My Solution ✅
+
+1. Created docker-compose.yml
+
+2. Import books.json into Books collection in Library DB.
+<img width="1911" alt="Screenshot 2024-10-25 at 7 36 19 AM" src="https://github.com/user-attachments/assets/2194b8be-61a1-4b1e-a7ea-de130f013d3c">
