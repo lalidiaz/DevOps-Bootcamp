@@ -16,3 +16,29 @@ networks:
   node-network:
     name: node-network
 ```
+
+### 3. [ERROR] ! nginx Warning pull access denied for javielrezende/nginx, repository does not exist
+
+Replace the following configuration in `docker-compose.yaml`
+
+```
+build:
+    context: ./nginx
+    image: javielrezende/nginx
+```
+
+to this:
+
+```
+build:
+    context: ./nginx
+    dockerfile: Dockerfile
+```
+
+And after reviewing the other configuration builds, I modified the following:
+
+```
+build:
+    context: ./mysql
+    dockerfile: Dockerfile
+```
