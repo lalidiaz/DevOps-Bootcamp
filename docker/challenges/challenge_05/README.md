@@ -395,3 +395,4 @@ mysql> SELECT * FROM peoples;
 1 row in set (0.00 sec)
 ```
 
+<img width="1462" alt="Screenshot 2024-10-31 at 6 27 35 PM" src="https://github.com/user-attachments/assets/22ae8cb5-b3bb-4ba4-bcec-f922a8541566">
