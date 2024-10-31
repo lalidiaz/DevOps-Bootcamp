@@ -71,7 +71,7 @@ failed to solve: mysql:5.7: failed to resolve source metadata for docker.io/libr
 
 After reviewing the docker image, I found this:
 
-[image mysql]
+<img width="1247" alt="Screenshot 2024-10-31 at 9 48 55 AM" src="https://github.com/user-attachments/assets/b9f7e9e1-1313-4000-805f-93021870f748">
 
 So I changed this line in `./mysql/Dockerfile`
 
