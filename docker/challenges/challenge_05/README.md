@@ -42,3 +42,76 @@ build:
     context: ./mysql
     dockerfile: Dockerfile
 ```
+
+```
+build:
+    context: ./node
+    dockerfile: Dockerfile
+```
+
+### 4. [ERROR] => ERROR [db internal] load metadata for docker.io/library/mysql:5.7
+
+_Failed to solve: mysql:5.7: failed to resolve source metadata for docker.io/library/mysql:5.7: no match for platform in manifest: not found_
+
+I head over to mysql directory and build the image to check the logs in the console to see if I get other insights of what could be the problem.
+
+```
+cd mysql
+docker build -t sqldb .
+```
+
+Error:
+
+```
+------
+ > [db internal] load metadata for docker.io/library/mysql:5.7:
+------
+failed to solve: mysql:5.7: failed to resolve source metadata for docker.io/library/mysql:5.7: failed to do request: Head "https://registry-1.docker.io/v2/library/mysql/manifests/5.7": dial tcp: lookup registry-1.docker.io on 127.0.0.53:53: server misbehaving
+```
+
+After reviewing the docker image, I found this:
+
+[image mysql]
+
+So I changed this line in `./mysql/Dockerfile`
+
+```
+FROM mysql:latest
+```
+
+### 5. [ERROR] ERROR [app 4/6] RUN install
+
+```
+ => ERROR [app 4/6] RUN install
+------
+ > [app 4/6] RUN install:
+0.140 install: missing file operand
+0.140 Try 'install --help' for more information.
+------
+```
+
+Add the following to `./node/Dockerfile`
+
+```
+RUN npm install
+```
+
+### 6. [WARNING] LegacyKeyValueFormat: "ENV key=value" should be used instead of legacy "ENV key value" format
+
+When creating the docker image inside `/node` directory, I found the following warning:
+
+```
+ 1 warning found (use docker --debug to expand):
+ - LegacyKeyValueFormat: "ENV key=value" should be used instead of legacy "ENV key value" format (line 9)
+Dockerfile:7
+--------------------
+   5 |     COPY . .
+   6 |
+   7 | >>> RUN apt-get update && apt-get install -y wget
+   8 |
+   9 |     ENV DOCKERIZE_VERSION v0.6.1
+--------------------
+```
+
+To solve this, I added the correct format to the ENV variable:
+`ENV DOCKERIZE_VERSION=v0.6.1`
