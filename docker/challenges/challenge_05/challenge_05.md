@@ -26,3 +26,8 @@ Don’t Worry if You Don’t Understand Everything: This challenge is designed t
 Commit Regularly: Make sure to commit frequently so we can follow your thought process and see how you solved the issues.
 
 This challenge will allow you to practice key DevOps skills, including debugging errors, configuring services in containers, and documenting processes. Good luck!
+
+
+# ✅ My Solution
+
+Please find my solutions in the [README.md](https://github.com/lalidiaz/DevOps-Bootcamp/blob/main/docker/challenges/challenge_05/README.md) file.
