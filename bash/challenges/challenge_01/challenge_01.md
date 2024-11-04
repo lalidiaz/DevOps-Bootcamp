@@ -4,13 +4,13 @@ Design an Automated Bash Script for Building a Python Application Using the Flas
 
 ## 📋 Instructions
 
-### 1. Clone the repository:
+### 1. Clone the repository:
 
 ```
 git clone -b devops-automation-python https://github.com/roxsross/devops-static-web.git
 ```
 
-### 2. Create a script named automation.sh, and a model can be found in the repo. The script should contain the following steps.
+### 2. Create a script named automation.sh, and a model can be found in the repo. The script should contain the following steps.
 
 Grant permission with:
 
@@ -124,3 +124,5 @@ docker build -t desafio2_app ./tempdir
 # Run the app
 docker run -t -d -p 5050:5050 --name nombreapprunning desafio2_app
 ```
+
+<img width="1477" alt="Screenshot 2024-11-04 at 1 13 46 PM" src="https://github.com/user-attachments/assets/a4f59d7c-36e0-4811-8711-3de798de990a">
