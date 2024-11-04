@@ -27,7 +27,9 @@ mkdir -p tempdir/templates tempdir/static
 #### 2.2 Inside the tempdir folder, copy the static/ folder, templates/ folder, and the application challenge2_app.py.
 
 ```
-cp -r /static /templates challenge2_app.py /tempdir
+cp -r static tempdir
+cp -r templates tempdir
+cp desafio2_app.py tempdir
 ```
 
 #### 2.3 The script should construct a Dockerfile, which will be located inside the temporary folder tempdir.
@@ -87,7 +89,6 @@ docker logs "CONTAINER ID"
 ```
 docker inspect -f '{{range.NetworkSettings.Networks}}{{.IPAddress}}{{end}}' container_name
 ```
-
 
 ## My Solution ✅
 
