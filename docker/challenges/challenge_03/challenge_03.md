@@ -110,8 +110,8 @@ docker exec -it <mongo-container-name> mongosh
 
 This challenge provides a comprehensive hands-on experience in DevOps, covering container image creation, service orchestration, and database management, enabling you to efficiently deploy and manage the "295topics" application.
 
+---
 
---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ## My Solution ✅
 
 #### My images
@@ -119,7 +119,6 @@ This challenge provides a comprehensive hands-on experience in DevOps, covering 
 **Frontend**: https://hub.docker.com/repository/docker/lauradiazdev/295frontend/general
 **Backend**:https://hub.docker.com/repository/docker/lauradiazdev/295backend/general
 **db**:https://hub.docker.com/repository/docker/lauradiazdev/295db/general
-
 
 ### Dockerfiles
 
@@ -138,19 +137,18 @@ RUN npm install
 
 COPY . .
 
-ENV DATABASE_URL=mongodb://mongodb:27017
+ENV DATABASE_URL=$DATABASE_URL
 
-ENV DATABASE_NAME=TopicstoreDb
+ENV DATABASE_NAME=$DATABASE_NAME
 
-ENV HOST=0.0.0.0
+ENV HOST=$HOST
 
-ENV PORT=5000
+ENV PORT=$PORT
 
 EXPOSE 5000
 
 CMD ["npm", "run", "start"]
 ```
-
 
 **Frontend Dockerfile**
 
@@ -165,7 +163,7 @@ RUN npm install
 
 COPY . .
 
-ENV API_URI=http://topics-api:5000/api/topics
+ENV API_URI=$API_URI
 
 EXPOSE 3000
 
@@ -181,6 +179,7 @@ COPY mongo-init.js /docker-entrypoint-initdb.d/
 ```
 
 **docker-compose.yml**
+
 ```
 services:
   frontend:
@@ -242,15 +241,13 @@ networks:
 
 ### Tests
 
-**Backend** 
+**Backend**
 
 <img width="1890" alt="Screenshot 2024-10-29 at 1 55 12 PM" src="https://github.com/user-attachments/assets/ba2e0d27-0a91-4bb8-86db-dce1d3ed384a">
-
 
 **Frontend**
 
 <img width="1909" alt="Screenshot 2024-10-29 at 1 56 04 PM" src="https://github.com/user-attachments/assets/3696ab20-ad32-4a6a-822c-eee51f7a1a1d">
-
 
 **Mongo Express**
 <img width="1911" alt="Screenshot 2024-10-29 at 1 56 35 PM" src="https://github.com/user-attachments/assets/fbc1773f-644f-4cc3-9ade-26c999824f3c">
