@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: frontend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: wanderlust
+      tier: frontend
+  template:
+    metadata:
+      labels:
+        app: wanderlust
+        tier: frontend
+    spec:
+      containers:
+        - name: frontend
+          image: lauradiazdev/wandelust:frontend-1.5.0
+          env:
+            - name: VITE_API_PATH
+              value: "http://backend:5000"
+          resources:
+            limits:
+              memory: "128Mi"
+              cpu: "256m"
+          ports:
+            - containerPort: 80

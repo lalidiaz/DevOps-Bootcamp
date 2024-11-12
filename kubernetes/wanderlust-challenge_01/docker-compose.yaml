@@ -1,0 +1,73 @@
+services:
+  backend:
+    build: ./backend
+    container_name: backend
+    image: lauradiazdev/wandelust:backend-1.0.0
+    environment:
+      - MONGODB_URI=mongodb://mongodb/wanderlust
+      - REDIS_URL=redis:6379
+    ports:
+      - 5000:5000
+    depends_on:
+      mongodb:
+        condition: service_started
+      redis:
+        condition: service_started
+    networks:
+      - wanderlust_network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:5000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+  frontend:
+    build:
+      context: ./frontend
+      args:
+        VITE_API_PATH: http://localhost:5000
+    container_name: frontend
+    image: lauradiazdev/wandelust:frontend-1.0.0
+    ports:
+      - 80:80
+    depends_on:
+      - backend
+    networks:
+      - wanderlust_network
+
+  mongodb:
+    container_name: mongodb
+    image: mongo
+    volumes:
+      - mongodb_data:/data
+    ports:
+      - 27017:27017
+    networks:
+      - wanderlust_network
+    healthcheck:
+      test: echo 'db.runCommand("ping").ok' | mongosh localhost:27017/test --quiet
+      interval: 10s
+      timeout: 10s
+      retries: 5
+
+  redis:
+    container_name: redis
+    image: redis:alpine
+    ports:
+      - 6379:6379
+    networks:
+      - wanderlust_network
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  mongodb_data:
+    driver: local
+
+networks:
+  wanderlust_network:
+    name: wanderlust_network

@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: mongodb
+spec:
+  # Cluster IP by default
+  type: ClusterIP
+  selector:
+    # should match matchLabels in mong-deployment.yaml
+    app: mongo
+  ports:
+    - port: 27017
+      targetPort: 27017

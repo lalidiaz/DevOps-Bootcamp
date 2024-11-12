@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: backend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: wanderlust
+      tier: backend
+  template:
+    metadata:
+      labels:
+        app: wanderlust
+        tier: backend
+    spec:
+      containers:
+        - name: backend
+          image: lauradiazdev/wandelust:backend-1.0.0
+          env:
+            - name: MONGODB_URI
+              value: "mongodb://mongodb:27017/wanderlust"
+            - name: REDIS_URL
+              value: "redis://redis:6379"
+          resources:
+            limits:
+              memory: "128Mi"
+              cpu: "250m"
+          ports:
+            - name: http
+              containerPort: 5000
