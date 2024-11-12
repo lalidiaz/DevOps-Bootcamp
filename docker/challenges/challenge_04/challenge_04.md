@@ -329,8 +329,6 @@ chmod +x deploy.sh
 bash -x ./deploy.sh
 ```
 
-[Semantic Release Docs](https://semantic-release.gitbook.io/semantic-release)
-
 ### RESULTS
 
 <img width="1457" alt="Screenshot 2024-11-12 at 4 23 34 PM" src="https://github.com/user-attachments/assets/1e4f900f-5300-4189-94f2-1b46294db75a">
