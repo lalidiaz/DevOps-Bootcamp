@@ -130,11 +130,10 @@ Remember to document your code, Dockerfiles, and `docker-compose.yml` properly.
 
 The bash script should be executable and easy to understand to facilitate the automation of the process.
 
-
 # My Solution ✅
 
-
 ## 🥷🔍TROUBLESHOOTING
+
 While working on this challenge, I encountered an issue in the source code that was affecting a key feature: **I was unable to connect to the Postgres database from the API service**. After reviewing the API container's logs, I identified that the issue was caused by a line in the `Main.java` file:
 
 ```
@@ -142,6 +141,7 @@ While working on this challenge, I encountered an issue in the source code that 
 ```
 
 The error message was:
+
 ```
 2024-11-12 15:30:40 org.postgresql.util.PSQLException: The server requested SCRAM-based authentication, but the password is an empty string.
 ```
@@ -151,6 +151,7 @@ This indicated a clear authentication issue between the Postgres database and th
 After extensive research, I followed these steps to resolve the issue:
 
 1. I modified the connection string in `Main.java`
+
 ```
     private static String randomWord(String table) {
         String dbUser = System.getenv("POSTGRES_USER");
@@ -158,22 +159,23 @@ After extensive research, I followed these steps to resolve the issue:
         try (Connection connection = DriverManager.getConnection("jdbc:postgresql://db:5432/postgres", dbUser, dbPassword)) {
 ```
 
-2. I have to rebuild my Java application so I run 
+2. I have to rebuild my Java application so I run
+
 ```
 mvn clean package
 ```
 
 3. After this, I run the following commands:
+
 ```
 docker compose down
 docker compose up -d
 ```
 
-
 ## RESULTS
 
-
 ### /api/Dockerfile
+
 ```
 FROM amazoncorretto:18
 
@@ -185,6 +187,7 @@ CMD ["java", "-jar", "words.jar"]
 ```
 
 ### /db/Dockerfile
+
 ```
 FROM postgres:15-alpine
 
@@ -192,6 +195,7 @@ COPY words.sql /docker-entrypoint-initdb.d/
 ```
 
 ### /web/Dockerfile
+
 ```
 FROM golang:1.23.3-alpine
 
@@ -203,6 +207,7 @@ CMD ["go", "run", "dispatcher.go"]
 ```
 
 ### docker-compose.yaml
+
 ```
 services:
   api:
@@ -261,25 +266,36 @@ networks:
 ```
 
 ### PUSH TO DOCKER HUB
+
 Please find my images here:
+
 ```
 [https://hub.docker.com/repository/docker/lauradiazdev/295words/general](https://hub.docker.com/repository/docker/lauradiazdev/295words/general)
 ```
 
 ### BASH SCRIPT
 
-Pipeline which will automatically update my semantic versions and rebuild a new docker images with that version:
-
+This script will handle building and tagging the Docker images, pushing them to Docker Hub, and running the Docker Compose setup. It also includes the use of Git describe and semantic-release to manage the versioning automatically.
 
 **deploy.sh**
+
 ```
 #!/bin/bash
 
 # Set the application name
 APP_NAME="295words"
 
-# Use semantic-release to get the version
-VERSION=$(npx semantic-release --dry-run --branches main | grep -o -E 'v[0-9]+\.[0-9]+\.[0-9]+')
+# Get the latest Git tag and use it as the version
+VERSION=$(git describe --tags --abbrev=0)
+
+# Debugging: Print the version to check if it's being extracted correctly
+echo "Detected version: $VERSION"
+
+# Check if the version is empty
+if [ -z "$VERSION" ]; then
+    echo "Error: No version found. Aborting deployment."
+    exit 1
+fi
 
 # Build the Docker images
 echo "Building Docker images..."
@@ -298,18 +314,20 @@ echo "Running Docker Compose..."
 docker-compose up -d
 
 echo "Deployment completed."
+
 ```
 
 **MAKE SCRIPT EXECUTABLE**
+
 ```
 chmod +x deploy.sh
 ```
 
 **To execute `deploy.sh`**
-```
-./deploy.sh
-```
 
+```
+bash -x ./deploy.sh
+```
 
 [Semantic Release Docs](https://semantic-release.gitbook.io/semantic-release)
 

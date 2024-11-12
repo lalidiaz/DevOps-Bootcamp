@@ -3,8 +3,17 @@
 # Set the application name
 APP_NAME="295words"
 
-# Use semantic-release to get the version
-VERSION=$(npx semantic-release --dry-run --branches main | grep -o -E 'v[0-9]+\.[0-9]+\.[0-9]+')
+# Get the latest Git tag and use it as the version
+VERSION=$(git describe --tags --abbrev=0)
+
+# Debugging: Print the version to check if it's being extracted correctly
+echo "Detected version: $VERSION"
+
+# Check if the version is empty
+if [ -z "$VERSION" ]; then
+    echo "Error: No version found. Aborting deployment."
+    exit 1
+fi
 
 # Build the Docker images
 echo "Building Docker images..."
