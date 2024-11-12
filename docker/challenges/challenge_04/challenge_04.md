@@ -172,7 +172,12 @@ docker compose down
 docker compose up -d
 ```
 
+<<<<<<< HEAD
 ## RESULTS
+=======
+
+## RESULTS
+>>>>>>> d131ce9ab69ac5c6aeff21f6c7fd0f80122ccf52
 
 ### /api/Dockerfile
 
@@ -270,7 +275,7 @@ networks:
 Please find my images here:
 
 ```
-[https://hub.docker.com/repository/docker/lauradiazdev/295words/general](https://hub.docker.com/repository/docker/lauradiazdev/295words/general)
+https://hub.docker.com/repository/docker/lauradiazdev/295words/general
 ```
 
 ### BASH SCRIPT
