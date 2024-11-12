@@ -172,3 +172,147 @@ docker compose up -d
 
 ## RESULTS
 
+
+### /api/Dockerfile
+```
+FROM amazoncorretto:18
+
+COPY ./target .
+
+EXPOSE 8080
+
+CMD ["java", "-jar", "words.jar"]
+```
+
+### /db/Dockerfile
+```
+FROM postgres:15-alpine
+
+COPY words.sql /docker-entrypoint-initdb.d/
+```
+
+### /web/Dockerfile
+```
+FROM golang:1.23.3-alpine
+
+COPY . .
+
+EXPOSE 80
+
+CMD ["go", "run", "dispatcher.go"]
+```
+
+### docker-compose.yaml
+```
+services:
+  api:
+    build:
+      context: ./api
+      dockerfile: Dockerfile
+    restart: always
+    ports:
+      - 8080:8080
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    depends_on:
+      - db
+    networks:
+      - 295words
+
+  web:
+    build:
+      context: ./web
+      dockerfile: Dockerfile
+    restart: always
+    ports:
+      - 80:80
+    depends_on:
+      - api
+    networks:
+      - 295words
+
+  db:
+    build:
+      context: ./db
+      dockerfile: Dockerfile
+    restart: always
+    volumes:
+      - db-data:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    ports:
+      - 5432:5432
+    networks:
+      - 295words
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  db-data:
+
+networks:
+  295words:
+    name: 295words
+```
+
+### PUSH TO DOCKER HUB
+Please find my images here:
+```
+[https://hub.docker.com/repository/docker/lauradiazdev/295words/general](https://hub.docker.com/repository/docker/lauradiazdev/295words/general)
+```
+
+### BASH SCRIPT
+
+Pipeline which will automatically update my semantic versions and rebuild a new docker images with that version:
+
+
+**deploy.sh**
+```
+#!/bin/bash
+
+# Set the application name
+APP_NAME="295words"
+
+# Use semantic-release to get the version
+VERSION=$(npx semantic-release --dry-run --branches main | grep -o -E 'v[0-9]+\.[0-9]+\.[0-9]+')
+
+# Build the Docker images
+echo "Building Docker images..."
+docker build -t lauradiazdev/$APP_NAME:backend-$VERSION -f api/Dockerfile api/
+docker build -t lauradiazdev/$APP_NAME:frontend-$VERSION -f web/Dockerfile web/
+docker build -t lauradiazdev/$APP_NAME:db-$VERSION -f db/Dockerfile db/
+
+# Push the Docker images to Docker Hub
+echo "Pushing Docker images to Docker Hub..."
+docker push lauradiazdev/$APP_NAME:backend-$VERSION
+docker push lauradiazdev/$APP_NAME:frontend-$VERSION
+docker push lauradiazdev/$APP_NAME:db-$VERSION
+
+# Run Docker Compose with the versioned images
+echo "Running Docker Compose..."
+docker-compose up -d
+
+echo "Deployment completed."
+```
+
+**MAKE SCRIPT EXECUTABLE**
+```
+chmod +x deploy.sh
+```
+
+**To execute `deploy.sh`**
+```
+./deploy.sh
+```
+
+
+[Semantic Release Docs](https://semantic-release.gitbook.io/semantic-release)
+
+### RESULTS
+
+<img width="1457" alt="Screenshot 2024-11-12 at 4 23 34 PM" src="https://github.com/user-attachments/assets/1e4f900f-5300-4189-94f2-1b46294db75a">
