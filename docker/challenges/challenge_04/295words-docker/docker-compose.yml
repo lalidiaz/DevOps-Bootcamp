@@ -1,36 +1,40 @@
 services:
+  # API service
   api:
-    build:
-      context: ./api
-      dockerfile: Dockerfile
+    image: lauradiazdev/295words:backend-0.0.0
+    # Automatically restart the container if it stops
     restart: always
+    # Map port 8080 on the host to port 8080 in the container
     ports:
       - 8080:8080
+    # Set environment variables for the PostgreSQL connection
     environment:
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=postgres
+    # Ensure the database service is running before starting the API service
     depends_on:
       - db
+    # Connect the API service to the 295words network
     networks:
       - 295words
 
   web:
-    build:
-      context: ./web
-      dockerfile: Dockerfile
+    image: lauradiazdev/295words:frontend-0.0.0
     restart: always
+    # Map port 80 on the host to port 80 in the container
     ports:
       - 80:80
+    # Ensure the API service is running before starting the web service
     depends_on:
       - api
     networks:
       - 295words
 
   db:
-    build:
-      context: ./db
-      dockerfile: Dockerfile
+    image: lauradiazdev/295words:db-0.0.0
+    # Automatically restart the container if it stops
     restart: always
+    # Create a persistent volume for the PostgreSQL data
     volumes:
       - db-data:/var/lib/postgresql/data
     environment:
@@ -40,15 +44,18 @@ services:
       - 5432:5432
     networks:
       - 295words
+    # Define a health check to ensure the PostgreSQL server is ready
     healthcheck:
       test: ["CMD-SHELL", "pg_isready -U postgres"]
       interval: 5s
       timeout: 5s
       retries: 5
 
+# Create a named volume for the PostgreSQL data
 volumes:
   db-data:
 
+# Define the 295words network
 networks:
   295words:
     name: 295words
