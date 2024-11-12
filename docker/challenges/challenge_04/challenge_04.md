@@ -172,12 +172,7 @@ docker compose down
 docker compose up -d
 ```
 
-<<<<<<< HEAD
-## RESULTS
-=======
-
 ## RESULTS
->>>>>>> d131ce9ab69ac5c6aeff21f6c7fd0f80122ccf52
 
 ### /api/Dockerfile
 
