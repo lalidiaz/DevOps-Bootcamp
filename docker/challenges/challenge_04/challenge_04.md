@@ -263,7 +263,7 @@ networks:
 ### PUSH TO DOCKER HUB
 Please find my images here:
 ```
-[https://hub.docker.com/repository/docker/lauradiazdev/295words/general](https://hub.docker.com/repository/docker/lauradiazdev/295words/general)
+https://hub.docker.com/repository/docker/lauradiazdev/295words/general
 ```
 
 ### BASH SCRIPT
