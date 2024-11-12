@@ -3,7 +3,8 @@
 This project includes Docker and Kubernetes configurations for a full-stack application. The setup features both backend and frontend services, a Redis database, and a MongoDB instance.
 Below, you’ll find details about the approach I took to optimize and deploy this application in a **Kubernetes** environment using Docker images, multi-stage builds, and a `docker-compose.yaml` setup.
 
-## Docker Images
+## Docker Images
+
 To optimize Docker images for both the backend and frontend, I implemented multi-stage builds. This approach reduced image sizes significantly, improving performance and reducing resource use:
 
 **Frontend Dockerfile**: The frontend image uses a multi-stage build where the first stage builds the Vite app, and the second stage serves static files with an Nginx server. Multi-stage builds helped reduce the image size by separating the build environment from the final runtime environment.
@@ -88,7 +89,8 @@ CMD ["npm", "start"]
 
 During this process, I ran into and solved issues with image configuration and compatibility in Kubernetes deployments, making sure everything worked smoothly in the target environment. I debugged by checking logs and connections in **k9s**.
 
-## Docker Compose Setup
+## Docker Compose Setup
+
 The `docker-compose.yaml` file defines a setup with four containers:
 
 - Backend container (API)
@@ -184,7 +186,8 @@ To deploy this project on Kubernetes, I created a directory structure as follows
 
 Each deployment configuration was crafted to define individual services in Kubernetes, making scaling and maintenance straightforward.
 
-## Minikube and Troubleshooting
+## Minikube and Troubleshooting
+
 I used Minikube to simulate the Kubernetes environment locally, creating a namespace called `development`. After applying the Kubernetes manifest files, I encountered an issue where the frontend couldn’t reach the backend. The problem was due to this line in `nginx.conf`:
 
 ```
@@ -199,5 +202,6 @@ proxy_pass http://backend:5000;
 
 Resolved the issue, as it directed Nginx to reach the backend service by name.
 
-## Docker Hub
+## Docker Hub
+
 Finally, I pushed all Docker images to Docker Hub for easier access and deployment in different environments.
