@@ -1,17 +1,18 @@
 # Challenge-flask-k8s
+![image](https://github.com/user-attachments/assets/fb3329fd-82c6-4bc3-b433-8d8a2f21dc87)
 
 This example creates a basic API with Flask, along with a consumer that accesses the API through the service. To expose the API, a NodePort service was created, which opens a port on all nodes so that the API is accessible from outside the cluster and by the consumer from the node.
 
-## Repository
+## Repository
 Check out the Kubernetes challenge https://github.com/roxsross/k8sonfire/tree/master/challenge-final/src
 
-## Requirements
+## Requirements
 - Kubernetes Cluster (EKS, Minikube, K3s, etc.)
 - Alternative: Killercoda
 - Docker
 - kubectl
 
-## Challenge
+## Challenge
 1. Create the Dockerfiles for the application and the consumer.
     - The application’s Dockerfile should contain the necessary instructions to build the Flask API image.
     - The consumer’s Dockerfile should contain the instructions needed to build the image for the consumer that will access the API.
@@ -28,7 +29,7 @@ Check out the Kubernetes challenge https://github.com/roxsross/k8sonfire/tree/ma
 5. Apply the manifests in the EKS cluster.
     - Use the kubectl apply command to apply the manifests.
 
-## Tips:
+## Tips:
 - The application runs on port `8000`.
 - The consumer needs to access `http://service-flask-app`.
 
