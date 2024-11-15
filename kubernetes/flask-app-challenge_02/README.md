@@ -38,11 +38,8 @@ Check out the Kubernetes challenge https://github.com/roxsross/k8sonfire/tree/ma
 - The application runs on port `8000`.
 - The consumer needs to access `http://service-flask-app`.
 
-## Include an image of the results
+## Include an image of the results
 Take a screenshot of the application and consumer working correctly.
-
-## Live Classes
-Deploy the challenge live and perform a live demonstration of the challenge deployment.
 
 # My Solution ✅
 
