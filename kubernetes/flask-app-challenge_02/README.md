@@ -251,3 +251,9 @@ kubectl apply -f deployments/consumer-deployment.yaml
 kubectl apply -f deployments/flask-service.yaml
 kubectl apply -f deployments/flask-deployment.yaml
 ```
+
+
+<img width="1573" alt="Screenshot 2024-11-15 at 3 22 52 PM" src="https://github.com/user-attachments/assets/f55df35f-95b0-4d22-8914-b32f776fba39">
+<img width="1577" alt="Screenshot 2024-11-15 at 3 22 41 PM" src="https://github.com/user-attachments/assets/c55fc2f1-82b1-4365-ac37-ab834bf46f14">
+<img width="1583" alt="Screenshot 2024-11-15 at 3 22 31 PM" src="https://github.com/user-attachments/assets/173c3416-84b2-4098-ac0b-efa54d30c84d">
+
