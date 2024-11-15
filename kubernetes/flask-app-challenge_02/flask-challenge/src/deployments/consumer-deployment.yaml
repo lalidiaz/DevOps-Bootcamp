@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: consumer
+  namespace: initial-laura-diaz
+  labels:
+    app: consumer
+    tier: frontend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: consumer
+      tier: frontend
+  template:
+    metadata:
+      labels:
+        app: consumer
+        tier: frontend
+    spec:
+      containers:
+        - name: consumer
+          image: lauradiazdev/consumer:v1.0.0
+          env:
+            - name: SERVICE_URL
+              value: "http://service-flask-app"
+          resources:
+            requests:
+              memory: "128Mi"
+              cpu: "250m"
+            limits:
+              memory: "128Mi"
+              cpu: "256m"
