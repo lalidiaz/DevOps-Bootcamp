@@ -2,6 +2,8 @@
 
 Welcome to my repository where I'll be sharing my solutions to the challenges and exercises from the [DevOps Bootcamp](https://bootcamp.295devops.com/), created by [Rossana Suarez](https://www.linkedin.com/in/roxsross/) .
 
+## Find my solutions in the README file of each project's folder.
+
 ### About the Bootcamp
 The DevOps Bootcamp is an extensive program designed by [Roxsross](https://x.com/roxsross) to equip participants with the essential skills and knowledge needed to excel in the DevOps field. Throughout the bootcamp, participants dive into various DevOps practices, tools, and methodologies, including continuous integration, continuous deployment, infrastructure as code, and more.
 
