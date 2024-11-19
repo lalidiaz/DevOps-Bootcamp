@@ -10,6 +10,9 @@ env:
 jobs:
   ci-frontend:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: kubernetes/wanderlust-challenge_01/frontend
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -18,13 +21,9 @@ jobs:
         with:
           node-version: "21"
       - name: Install dependencies
-        run: |
-          cd kubernetes/wanderlust-challenge_01/frontend
-          npm install
+        run: npm install
       - name: Run tests
-        run: |
-          cd kubernetes/wanderlust-challenge_01/frontend
-          npm run test
+        run: npm run test
         continue-on-error: true
   cd-frontend:
     runs-on: ubuntu-latest
@@ -49,6 +48,9 @@ jobs:
     
   ci-backend:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: kubernetes/wanderlust-challenge_01/backend
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -57,13 +59,9 @@ jobs:
         with:
           node-version: "21"
       - name: Install dependencies
-        run: |
-          cd kubernetes/wanderlust-challenge_01/backend 
-          npm install
+        run: npm install
       - name: Run tests
-        run: |
-          cd kubernetes/wanderlust-challenge_01/frontend
-          npm run test
+        run: npm run test
         continue-on-error: true
         
   cd-backend:
