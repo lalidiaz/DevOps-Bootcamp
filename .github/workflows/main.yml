@@ -26,6 +26,8 @@ jobs:
     runs-on: ubuntu-latest
     needs: [ci-frontend]
     steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
       - name: Setup Node.js environment
         uses: actions/setup-node@v4.1.0
         with:
@@ -34,6 +36,13 @@ jobs:
         run: |
           cd kubernetes/wanderlust-challenge_01/frontend
           npm install
+      - name: Run tests
+        run: |
+          cd kubernetes/wanderlust-challenge_01/frontend
+          npm run test
+        continue-on-error: true
+
+   
 
   ci-backend:
     runs-on: ubuntu-latest
@@ -57,6 +66,8 @@ jobs:
     runs-on: ubuntu-latest
     needs: [ci-backend]
     steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
       - name: Setup Node.js environment
         uses: actions/setup-node@v4.1.0
         with:
@@ -65,4 +76,8 @@ jobs:
         run: |
           cd kubernetes/wanderlust-challenge_01/frontend
           npm install
-
+      - name: Run tests
+        run: |
+          cd kubernetes/wanderlust-challenge_01/frontend
+          npm run test
+        continue-on-error: true
