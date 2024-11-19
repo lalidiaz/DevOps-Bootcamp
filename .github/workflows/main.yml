@@ -24,7 +24,7 @@ jobs:
         continue-on-error: true
   cd-frontend:
     runs-on: ubuntu-latest
-    needs: [ci-frontend, ci-backend]
+    needs: [ci-frontend, cd-backend]
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
