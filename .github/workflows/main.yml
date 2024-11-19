@@ -44,7 +44,7 @@ jobs:
       - name: Docker Build
         run: |
           cd kubernetes/wanderlust-challenge_01/frontend
-          docker build - $REGISTRY/$REPOSITORY:frontend-$VERSION .
+          docker build -t $REGISTRY/$REPOSITORY:frontend-$VERSION .
           docker push $REGISTRY/$REPOSITORY:frontend-$VERSION
     
   ci-backend:
@@ -84,6 +84,6 @@ jobs:
       - name: Docker Build
         run: |
           cd kubernetes/wanderlust-challenge_01/backend
-          docker build - $REGISTRY/$REPOSITORY:backend-$VERSION .
+          docker build -t $REGISTRY/$REPOSITORY:backend-$VERSION .
           docker push $REGISTRY/$REPOSITORY:backend-$VERSION
     
