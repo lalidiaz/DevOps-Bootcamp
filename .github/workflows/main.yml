@@ -22,6 +22,18 @@ jobs:
           cd kubernetes/wanderlust-challenge_01/frontend
           npm run test
         continue-on-error: true
+  cd-frontend:
+    runs-on: ubuntu-latest
+    needs: [ci-frontend]
+    steps:
+      - name: Setup Node.js environment
+        uses: actions/setup-node@v4.1.0
+        with:
+          node-version: "21"
+      - name: Install dependencies
+        run: |
+          cd kubernetes/wanderlust-challenge_01/frontend
+          npm install
 
   ci-backend:
     runs-on: ubuntu-latest
@@ -41,3 +53,16 @@ jobs:
           cd kubernetes/wanderlust-challenge_01/frontend
           npm run test
         continue-on-error: true
+  cd-backend:
+    runs-on: ubuntu-latest
+    needs: [ci-backend]
+    steps:
+      - name: Setup Node.js environment
+        uses: actions/setup-node@v4.1.0
+        with:
+          node-version: "21"
+      - name: Install dependencies
+        run: |
+          cd kubernetes/wanderlust-challenge_01/frontend
+          npm install
+
