@@ -33,8 +33,8 @@ For more details about the bootcamp, visit [RoxsRoss's DevOps Bootcamp website](
 ## Linux
 
 **Challenges:**
-- [x] [Deploy the Flask Application 📚"Book Library"📚 with Nginx and Gunicorn]([https://github.com/lalidiaz/DevOps-Bootcamp/blob/main/linux/challenges/challenge_01.md](https://github.com/lalidiaz/DevOps-Bootcamp/blob/main/linux/challenges/challenge_01.md)
-- [x] [Deployment of Applications with PM2](https://github.com/lalidiaz/DevOps-Bootcamp/blob/main/linux/challenges/challenge_02.md) 
+- [x] [Deploy the Flask Application "Book Library" with Nginx and Gunicorn](https://github.com/lalidiaz/DevOps-Bootcamp/blob/main/linux/challenges/challenge_01.md)
+- [x] [Deployment of Applications with PM2](https://github.com/lalidiaz/DevOps-Bootcamp/blob/main/linux/challenges/challenge_02.md)
 - [x] [Linux Exercise for DevOps](https://github.com/lalidiaz/DevOps-Bootcamp/blob/main/linux/challenges/challenge_03.md)
 
 **Exercises:**
