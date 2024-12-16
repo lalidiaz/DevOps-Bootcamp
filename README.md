@@ -15,20 +15,19 @@ For more details about the bootcamp, visit [RoxsRoss's DevOps Bootcamp website](
 - [x] [Challenge 01](https://github.com/lalidiaz/DevOps-Bootcamp/blob/main/bash/challenges/challenge_01/challenge_01.md#my-solution-): Design an Automated Bash Script for Building a Python Application Using the Flask Framework
 
 **Exercises:**
-- [x] [Bash Exercises](https://github.com/lalidiaz/DevOps-Bootcamp/tree/main/bash/exercises)
-  - [x] [LAMP stack  Web Application Deployment](https://github.com/lalidiaz/DevOps-Bootcamp/blob/main/bash/exercises/exercise_01.md)
-  - [x] [Database Backup and Cleanup](https://github.com/lalidiaz/DevOps-Bootcamp/blob/main/bash/exercises/exercise_02.md)
-  - [x] [Temporary File Cleanup](https://github.com/lalidiaz/DevOps-Bootcamp/blob/main/bash/exercises/exercise_03.md)
-  - [x] [Basic Unix/Linux Commands](https://github.com/lalidiaz/DevOps-Bootcamp/blob/main/bash/exercises/01_Basic_Unix_Linux_Commands.md)
-  - [x] [Permissions and Properties](https://github.com/lalidiaz/DevOps-Bootcamp/blob/main/bash/exercises/02_Permissions_and_Properties.md)
-  - [x] [Temporary File Cleanup](https://github.com/lalidiaz/DevOps-Bootcamp/blob/main/bash/exercises/exercise_03.md)
-  - [x] [Real-Time Log Monitoring](https://github.com/lalidiaz/DevOps-Bootcamp/blob/main/bash/exercises/exercise_04.md)
-  - [x] [Task Automation with Cron](https://github.com/lalidiaz/DevOps-Bootcamp/blob/main/bash/exercises/exercise_05.md)
-  - [x] [Bash Functions](https://github.com/lalidiaz/DevOps-Bootcamp/blob/main/bash/exercises/06_Bash_Functions.md)
-  - [x] [Process Management Exercises](https://github.com/lalidiaz/DevOps-Bootcamp/blob/main/bash/exercises/07_Process%20Management_in_Bash.md)
-  - [x] [Text Manipulation](https://github.com/lalidiaz/DevOps-Bootcamp/blob/main/bash/exercises/08_Text_Manipulation_in_Bash.md)
-  - [x] [File System](https://github.com/lalidiaz/DevOps-Bootcamp/blob/main/bash/exercises/09_Advanced_interaction_exercises_with_file_system.md)
-  - [x] [Integration and Automation](https://github.com/lalidiaz/DevOps-Bootcamp/blob/main/bash/exercises/10_Integration_and_Automation.md)
+- [x] [LAMP stack  Web Application Deployment](https://github.com/lalidiaz/DevOps-Bootcamp/blob/main/bash/exercises/exercise_01.md)
+- [x] [Database Backup and Cleanup](https://github.com/lalidiaz/DevOps-Bootcamp/blob/main/bash/exercises/exercise_02.md)
+- [x] [Temporary File Cleanup](https://github.com/lalidiaz/DevOps-Bootcamp/blob/main/bash/exercises/exercise_03.md)
+- [x] [Basic Unix/Linux Commands](https://github.com/lalidiaz/DevOps-Bootcamp/blob/main/bash/exercises/01_Basic_Unix_Linux_Commands.md)
+- [x] [Permissions and Properties](https://github.com/lalidiaz/DevOps-Bootcamp/blob/main/bash/exercises/02_Permissions_and_Properties.md)
+- [x] [Temporary File Cleanup](https://github.com/lalidiaz/DevOps-Bootcamp/blob/main/bash/exercises/exercise_03.md)
+- [x] [Real-Time Log Monitoring](https://github.com/lalidiaz/DevOps-Bootcamp/blob/main/bash/exercises/exercise_04.md)
+- [x] [Task Automation with Cron](https://github.com/lalidiaz/DevOps-Bootcamp/blob/main/bash/exercises/exercise_05.md)
+- [x] [Bash Functions](https://github.com/lalidiaz/DevOps-Bootcamp/blob/main/bash/exercises/06_Bash_Functions.md)
+- [x] [Process Management Exercises](https://github.com/lalidiaz/DevOps-Bootcamp/blob/main/bash/exercises/07_Process%20Management_in_Bash.md)
+- [x] [Text Manipulation](https://github.com/lalidiaz/DevOps-Bootcamp/blob/main/bash/exercises/08_Text_Manipulation_in_Bash.md)
+- [x] [File System](https://github.com/lalidiaz/DevOps-Bootcamp/blob/main/bash/exercises/09_Advanced_interaction_exercises_with_file_system.md)
+- [x] [Integration and Automation](https://github.com/lalidiaz/DevOps-Bootcamp/blob/main/bash/exercises/10_Integration_and_Automation.md)
 
 ## Linux
 
