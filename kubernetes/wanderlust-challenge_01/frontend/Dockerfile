@@ -1,5 +1,5 @@
 # First stage: Build the app
-FROM node:21-alpine AS builder
+FROM node:22-alpine AS builder
 
 # Add labels for better maintainability and metadata
 LABEL maintainer="Laura Diaz lauradiaz1586@gmail.com>"
